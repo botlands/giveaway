@@ -1,14 +1,4 @@
-const Discord = require("discord.js");
-const config = require("../../config.json")
-const ms = require("ms");
-const { all } = require("../../modules/logger");
-module.exports = {
-    name: "giveaway",
-    aliases: ["g"],
-    category: "⛔️ Moderation Commands",
-    description: "Giveaway manager",
-    usage: "giveaway <start/end/reroll/edit/delete/list>",
-    run: async (client, message, args) => {
+
         if (!message.member.hasPermission(["ADMINISTRATOR"])) return message.reply(`**${message.author.username}**, you dont have the missing permissions!`)
 
         if (!args[0]) return message.reply(new Discord.MessageEmbed()
